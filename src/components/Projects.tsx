@@ -30,6 +30,17 @@ export const Projects = () => {
     )
   }else{
 
-      return <div className=" flex flex-col gap-6  bg-[#242337] px-5 py-7"></div>;
+      return <div className=" flex flex-col gap-6  bg-[#242337] px-5 py-7">
+        {projects.map((project, key) => (
+            <a>
+                <Card key={key} id={project.id}
+                name={project.name}
+                description={project.description}
+                leader={project.leader}
+                status={project.status}
+                created_at={project.created_at} />
+            </a>
+        ))}
+      </div>;
     }
 };
